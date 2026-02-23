@@ -1,0 +1,14 @@
+---
+description: Guidelines for diagnosing and fixing CI failures. Applies when the user provides a CI workflow run link, asks to fix a CI failure, or asks why CI is failing.
+alwaysApply: false
+---
+
+# CI Fix Rules
+
+When diagnosing a CI failure:
+
+1. **Fetch the logs first**. Use `gh run view` to get the failure details before looking at code. Do not guess what failed.
+2. **Identify the root cause**. Read the actual error output. Distinguish between test failures, build errors, linting issues, flaky tests, and infrastructure problems.
+3. **Fix locally**. Apply the fix to local files. Do not commit or push unless explicitly asked.
+4. **Stay focused**. Fix what CI is complaining about. Do not refactor unrelated code or "improve" things along the way.
+5. **Verify the fix makes sense**. If the failing test or check can be run locally, run it to confirm the fix before reporting back.

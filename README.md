@@ -25,6 +25,7 @@ Skills are triggered by asking Cursor to do something that matches the skill des
 - "Fix the PR comments" triggers the `pr-fix` skill
 - "Write a PR description" triggers the `pr-description` skill
 - "Solve issue #15" triggers the `issue-solver` skill
+- "Fix this CI failure: https://github.com/org/repo/actions/runs/12345" triggers the `ci-fix` skill
 
 ## What's in here
 
@@ -40,6 +41,7 @@ Rules are instructions that Cursor follows automatically or when triggered by co
 | `pr-description.mdc` | No | How to write a PR description: summarize conversation and diff, write to a file, keep it short and developer-friendly. |
 | `issue-solver.mdc` | No | How to analyze an issue and produce a solution plan without implementing anything. |
 | `docs.mdc` | No | How to write documentation: no emojis, no second person, developer tone, concise, no AI patterns. |
+| `ci-fix.mdc` | No | How to diagnose and fix CI failures: fetch logs, find root cause, fix locally, verify. |
 
 ### Skills (`skills/`)
 
@@ -52,4 +54,5 @@ Skills are step-by-step workflows that Cursor can execute when asked.
 | `pr-description/` | Gathers conversation context and `git diff`, writes a PR description to `pr-description.md`. |
 | `issue-solver/` | Parses an issue, follows linked resources, reads relevant code, writes a solution plan to `issue-solution.md`. |
 | `docs/` | Reads relevant code, writes or updates documentation with developer tone and no fluff. |
+| `ci-fix/` | Fetches CI logs from a GitHub Actions run URL, identifies the failure, applies fixes locally. |
 
