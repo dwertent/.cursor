@@ -1,0 +1,12 @@
+---
+description: General coding standards. Always applied.
+alwaysApply: true
+---
+
+# Coding Rules
+
+1. **Keep docs in sync**. When you change functionality, update any relevant documentation (README, inline docs, docstrings, API docs). Stale docs are worse than no docs.
+2. **Write like a developer**. Code comments, commit messages, PR descriptions, and documentation should read like a human developer wrote them. No corporate filler, no AI-sounding phrasing, no over-explaining the obvious. Be direct, be brief, be useful.
+3. **No emojis**. Do not add emojis to code, comments, logs, commit messages, or documentation.
+4. **Follow language conventions**. Use idiomatic patterns, naming conventions, and project structure for whatever language you are working in. When in doubt, match the style of the surrounding code.
+5. **Comments explain why, not what**. Do not narrate code ("increment counter", "return result"). Only comment when the reason behind a decision is not obvious from the code itself.

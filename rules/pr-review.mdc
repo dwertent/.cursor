@@ -1,0 +1,30 @@
+---
+description: Guidelines for reviewing GitHub pull requests. Applies when the user asks to review a PR or pull request.
+alwaysApply: false
+---
+
+# PR Review Rules
+
+When reviewing a pull request:
+
+1. **Tag every comment** with `[cursor-auto-review]` prefix so humans know it was machine-generated.
+2. **Post inline comments** on specific code lines using `gh api` — do not dump everything into a single wall-of-text comment. General observations go in one PR-level comment; code-specific findings go as inline review comments attached to the relevant lines.
+3. **Be extremely concise**. Every comment — inline and summary — must be short and to the point. One or two sentences maximum for the visible part. Use a `<details>` block for additional context:
+   ```
+   [cursor-auto-review] The visible part: a short, direct statement of the problem.
+
+   <details><summary>Details</summary>
+
+   Brief explanation with context. Still keep it short — a few sentences, not paragraphs.
+
+   </details>
+   ```
+4. **Verify the PR description**. Cross-check claims against the diff. Call out discrepancies.
+5. **Check linked issues**. If the PR references an issue, fetch and read it. Verify the code changes resolve it.
+6. **Read existing comments**. Review human reviewer comments for context. Ignore `[cursor-auto-review]` comments.
+7. **No compliments**. Get straight to findings.
+8. **Skip nits**. No style, formatting, import order, typo, or whitespace comments. Focus on bugs, architecture, security, and design.
+9. **Voice opinions**. State your position directly. No hedging.
+10. **Be direct**. "This will break when X" not "This could potentially cause issues if X happens."
+11. **Suggest fixes**. Include a concrete fix or alternative when possible.
+12. **No merge verdicts**. The merge decision belongs to the human reviewers.

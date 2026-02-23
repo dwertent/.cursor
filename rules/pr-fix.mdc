@@ -1,0 +1,18 @@
+---
+description: Guidelines for addressing PR review comments locally. Applies when the user asks to fix PR comments, address PR feedback, or handle PR review.
+alwaysApply: false
+---
+
+# PR Fix Rules
+
+When addressing review comments on a pull request:
+
+1. **Local changes only**. Make all fixes locally. Do NOT commit, push, or create new branches unless the user explicitly authorizes it.
+2. **Think independently**. Review comments raise issues — they don't dictate solutions. Evaluate each comment: if the proposed fix makes sense, apply it. If a better solution exists, implement that instead. If the suggestion is wrong, skip it and note why.
+3. **When unclear, don't guess**. If a comment is vague or the right fix is ambiguous, flag it in the report but do not attempt a fix. Bad fixes are worse than no fix.
+4. **Write like a developer**. Code changes, comments, and variable names should look like a human developer wrote them — not a PR-fixing bot. Do not add unnecessary comments or over-explain in code.
+5. **Generate a report**. After processing all comments, write a markdown report to `pr-fix-report.md` in the repo root. The report must:
+   - List every review comment and how it was handled (fixed, skipped, flagged)
+   - Highlight comments needing the user's attention (unclear issues, cases where you chose a different approach than suggested, comments you skipped)
+   - Be concise — one or two lines per comment, not essays
+6. **Checkout the PR branch**. Before making any changes, ensure you are on the correct branch for the PR.

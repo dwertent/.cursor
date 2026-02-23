@@ -1,0 +1,16 @@
+---
+description: Guidelines for writing PR descriptions. Applies when the user asks to write a PR description, summarize changes for a PR, or draft a PR body.
+alwaysApply: false
+---
+
+# PR Description Rules
+
+When writing a PR description:
+
+1. **Summarize the conversation and the diff**. Base the description on both the conversation context and the actual code changes (`git diff`). If the diff is needed and not already visible, run `git diff` against the base branch.
+2. **Write to a file**. Output the description to `pr-description.md` in the repo root. Do NOT update the PR on GitHub.
+3. **Keep it short**. Write concise, direct prose. No filler, no padding.
+4. **Start with an Overview section**. Explain the issue and the solution in a few sentences. If there are relevant links (issues, other PRs, docs), include them inline.
+5. **Focus on what matters**. Describe the meaningful changes. Skip minor stuff like formatting tweaks, small renames, or style adjustments unless they are the point of the PR.
+6. **Write like a developer**. No bold text, no bullet lists with `-`. Write in plain sentences and short paragraphs, the way a developer would describe the change to a teammate.
+7. **No emojis**. Not in headers, not in text, nowhere.

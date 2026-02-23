@@ -1,0 +1,17 @@
+---
+description: Guidelines for analyzing issues and producing solution plans. Applies when the user asks to solve an issue, investigate an issue, or create a fix plan from a GitHub issue or description.
+alwaysApply: false
+---
+
+# Issue Solver Rules
+
+When solving or investigating an issue:
+
+1. **Research first**. Read the full issue, all comments, and follow every linked resource (referenced issues, PRs, external links, stack traces) before forming a plan. Don't jump to solutions with partial context.
+2. **Understand the code**. If the issue relates to a local repo, search for and read the relevant code. Don't plan changes to files you haven't looked at.
+3. **Find the root cause**. The plan must explain *why* the issue exists, not just describe what to change. Surface-level fixes lead to regressions.
+4. **Be specific and actionable**. Every step in the plan should reference concrete files, functions, or lines. "Fix the handler" is not a step — "Add input validation in `handleRequest` at `server/routes.go:87`" is.
+5. **Order the steps**. A developer should be able to follow the plan top-to-bottom without re-reading.
+6. **Don't implement**. Produce a plan (`issue-solution.md`), not code changes. The user decides when to implement.
+7. **Surface unknowns**. If the issue is ambiguous or missing information, call it out in an "Open Questions" section. Don't guess or assume.
+8. **Include testing**. Every plan must describe how to verify the fix — specific commands, test cases, or manual validation steps.
