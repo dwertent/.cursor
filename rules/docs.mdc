@@ -1,0 +1,20 @@
+---
+description: Guidelines for writing documentation. Applies when the user asks to write docs, update docs, create a README, or document something.
+alwaysApply: false
+---
+
+# Documentation Rules
+
+When writing or updating documentation:
+
+1. **No emojis**. Not in headings, not in text, not anywhere.
+2. **No second person**. Do not use "you", "your", "you'll", or similar. Write in third person or use imperative mood ("Run the server", not "You need to run the server").
+3. **Sound like a developer**. Write the way an engineer writes internal docs: direct, practical, no fluff. Avoid corporate tone, marketing language, and phrases that read like they came from a chatbot.
+4. **Keep it short**. Say what needs to be said and stop. Every sentence should carry information. Cut filler words, unnecessary qualifiers, and restating things that were already said.
+5. **Avoid AI patterns**. Do not use patterns commonly associated with AI-generated text:
+   - No "Great question!" or similar openers
+   - No "Here's how to..." or "Let's..." framing
+   - No excessive hedging ("It's important to note that...", "It should be noted...")
+   - No filler transitions ("Additionally", "Furthermore", "Moreover")
+   - No summarizing what was just said
+   - No exclamation marks for enthusiasm
