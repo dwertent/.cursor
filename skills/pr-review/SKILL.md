@@ -35,10 +35,55 @@ gh api repos/<OWNER>/<REPO>/issues/<NUMBER>/comments  # PR-level conversation co
 ### Step 3: Read existing PR comments for context
 
 - Review existing comments (fetched in Step 1) for context from other reviewers.
-- Ignore comments prefixed with `[cursor-auto-review]` — those are from previous runs.
 - Use human reviewer insights to inform your analysis.
 
-### Step 4: Analyze the diff
+### Step 4: Resolve addressed review comments
+
+Check all previous `[cursor-auto-review]` and Copilot review comments that are still unresolved. For each one, compare the flagged issue against the current diff. If the code has been updated to address the concern, resolve the thread on GitHub.
+
+Fetch review threads using the GraphQL API:
+
+```bash
+gh api graphql -f query='
+query {
+  repository(owner: "<OWNER>", name: "<REPO>") {
+    pullRequest(number: <NUMBER>) {
+      reviewThreads(first: 100) {
+        nodes {
+          id
+          isResolved
+          comments(first: 5) {
+            nodes {
+              body
+              author { login }
+              path
+              line
+            }
+          }
+        }
+      }
+    }
+  }
+}'
+```
+
+For each unresolved thread where the comment was posted by the current bot or by Copilot:
+1. Read the comment body to understand what was flagged.
+2. Check the current diff at that file/line to see if the issue was addressed.
+3. If resolved, mark the thread:
+
+```bash
+gh api graphql -f query='
+mutation {
+  resolveReviewThread(input: {threadId: "<THREAD_ID>"}) {
+    thread { id isResolved }
+  }
+}'
+```
+
+Only resolve when the fix is clear. If the change is ambiguous or only partially addresses the concern, leave the thread open.
+
+### Step 5: Analyze the diff
 
 Read the full diff. For large diffs, read in chunks. Understand every changed file — do not skim.
 
@@ -55,7 +100,7 @@ Do NOT comment on:
 - Minor nits (typos in comments, import ordering, trailing whitespace)
 - Things that are merely "not how I would do it" without a concrete downside
 
-### Step 5: Form opinions
+### Step 6: Form opinions
 
 Before writing comments, decide:
 - Is the overall approach sound? If not, say so directly.
@@ -65,7 +110,7 @@ Before writing comments, decide:
 
 Do not soften with praise. Get to the point.
 
-### Step 6: Post code-specific comments
+### Step 7: Post code-specific comments
 
 For each finding tied to specific lines, post an inline review comment.
 
@@ -110,7 +155,7 @@ Rules for inline comments:
 - The `<details>` section provides context but is also kept brief — a few sentences, not paragraphs
 - Use the line number from the RIGHT side of the diff
 
-### Step 7: Post the summary comment
+### Step 8: Post the summary comment
 
 Post a single general review comment on the PR:
 

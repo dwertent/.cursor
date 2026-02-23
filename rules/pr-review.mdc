@@ -22,9 +22,10 @@ When reviewing a pull request:
 4. **Verify the PR description**. Cross-check claims against the diff. Call out discrepancies.
 5. **Check linked issues**. If the PR references an issue, fetch and read it. Verify the code changes resolve it.
 6. **Read existing comments**. Review human reviewer comments for context. Ignore `[cursor-auto-review]` comments.
-7. **No compliments**. Get straight to findings.
-8. **Skip nits**. No style, formatting, import order, typo, or whitespace comments. Focus on bugs, architecture, security, and design.
-9. **Voice opinions**. State your position directly. No hedging.
-10. **Be direct**. "This will break when X" not "This could potentially cause issues if X happens."
-11. **Suggest fixes**. Include a concrete fix or alternative when possible.
-12. **No merge verdicts**. The merge decision belongs to the human reviewers.
+7. **Resolve fixed comments**. Check previous `[cursor-auto-review]` and Copilot review comments. If the current diff shows the issue has been addressed, resolve the thread on GitHub using the GraphQL API. Only resolve when the fix is clear — if unsure, leave it open.
+8. **No compliments**. Get straight to findings.
+9. **Skip nits**. No style, formatting, import order, typo, or whitespace comments. Focus on bugs, architecture, security, and design.
+10. **Voice opinions**. State your position directly. No hedging.
+11. **Be direct**. "This will break when X" not "This could potentially cause issues if X happens."
+12. **Suggest fixes**. Include a concrete fix or alternative when possible.
+13. **No merge verdicts**. The merge decision belongs to the human reviewers.
