@@ -32,8 +32,8 @@ Skills are step-by-step workflows that Cursor can execute when asked.
 Clone this repo and symlink:
 
 ```bash
-ln -s ~/.cursor/rules /path/to/your-repo/.cursor/rules
-ln -s ~/.cursor/skills /path/to/your-repo/.cursor/skills
+ln -s  /path/to/your-repo/.cursor/rules ~/.cursor/rules
+ln -s /path/to/your-repo/.cursor/skills ~/.cursor/skills
 ```
 
 ## Prerequisites
