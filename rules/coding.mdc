@@ -6,7 +6,9 @@ alwaysApply: true
 # Coding Rules
 
 1. **Keep docs in sync**. When you change functionality, update any relevant documentation (README, inline docs, docstrings, API docs). Stale docs are worse than no docs.
-2. **Write like a developer**. Code comments, commit messages, PR descriptions, and documentation should read like a human developer wrote them. No corporate filler, no AI-sounding phrasing, no over-explaining the obvious. Be direct, be brief, be useful.
-3. **No emojis**. Do not add emojis to code, comments, logs, commit messages, or documentation.
-4. **Follow language conventions**. Use idiomatic patterns, naming conventions, and project structure for whatever language you are working in. When in doubt, match the style of the surrounding code.
-5. **Comments explain why, not what**. Do not narrate code ("increment counter", "return result"). Only comment when the reason behind a decision is not obvious from the code itself.
+2. **Keep rules, READMEs, and Makefiles aligned**. When a behavior change affects build steps, test commands, or development workflows, check that the repo's cursor rules (`.cursor/rules/`), cursor skills (`.cursor/skills/`), README, and Makefiles still reflect reality. Fix any drift.
+3. **Backfill missing cursor rules/skills**. After finishing work in an area that has no cursor rules or skills covering it, add them to that repo's `.cursor/rules/` or `.cursor/skills/` so the patterns are captured for future work. Match the style and depth of existing rules/skills in the repo.
+4. **Write like a developer**. Code comments, commit messages, PR descriptions, and documentation should read like a human developer wrote them. No corporate filler, no AI-sounding phrasing, no over-explaining the obvious. Be direct, be brief, be useful.
+5. **No emojis**. Do not add emojis to code, comments, logs, commit messages, or documentation.
+6. **Follow language conventions**. Use idiomatic patterns, naming conventions, and project structure for whatever language you are working in. When in doubt, match the style of the surrounding code.
+7. **Comments explain why, not what**. Do not narrate code ("increment counter", "return result"). Only comment when the reason behind a decision is not obvious from the code itself.
